@@ -1,8 +1,7 @@
 #navbarRow {
-    background-color: rgb(54, 54, 180);
+    /* background-color: rgb(54, 54, 180); */
 }
 
 #navbarContent {
     border: 1px solid red;
-    height: 5vh;
 }

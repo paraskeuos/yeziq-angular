@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
+  // Shows courses or reading page
+  public showCourses = true;
+
   constructor() { }
 
   ngOnInit(): void {
