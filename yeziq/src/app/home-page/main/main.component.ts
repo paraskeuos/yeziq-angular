@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Course } from '../../../models/course.model';
 
 @Component({
   selector: 'app-main',
@@ -9,6 +10,9 @@ export class MainComponent implements OnInit {
 
   // Shows courses or reading page
   public showCourses = true;
+
+  @Input()
+  public courses: Course[];
 
   constructor() { }
 

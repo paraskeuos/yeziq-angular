@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
+  public showLogin = true;
+
   constructor() { }
 
   ngOnInit(): void {

@@ -17,14 +17,6 @@ const courseSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    /* lessons: {
-        type: [[[String]]],
-        required: true
-    }, */
-    size: {
-        type: Number,
-        required: true
-    },
     creationTime: {
         type: Date,
         required: true

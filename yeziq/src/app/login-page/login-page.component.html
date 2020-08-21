@@ -1,1 +1,16 @@
-<p>login-page works!</p>
+<div class="container-fluid">
+    <div class="row justify-content-center align-items-center bg-primary" id="container">
+        <div class="col-10 col-md-8 col-lg-4">
+
+            <div class="row justify-content-center" style="margin-bottom: 5vh; color: goldenrod;">
+                <h1 style="font-size: 70px;"><strong><em>yeziq</em></strong></h1>
+            </div>
+
+            <div class="row justify-content-center" style="background-color: white;">
+                <app-login-form *ngIf="showLogin"></app-login-form>
+
+                <app-register-form *ngIf="!showLogin"></app-register-form>
+            </div>
+        </div>
+    </div>
+</div>
