@@ -1,4 +1,4 @@
-<form [formGroup]="loginForm" (ngSubmit)="submitLoginInfo()">
+<form [formGroup]="loginForm" (ngSubmit)="submitLoginInfo()" autocomplete="off">
     <div class="form-group">
         <div class="form-row">
             <div class="col-12">
@@ -13,12 +13,16 @@
         </div>
     </div>
     <div class="form-group">
-        <label class="col-form-label-sm" for="password">Password:</label>
-        <input type="password" id="password" class="form-control form-control-sm" formControlName="password" />
+        <div class="form-row">
+            <div class="col-12">
+                <label class="col-form-label-sm" for="password">Password:</label>
+                <input type="password" id="password" class="form-control form-control-sm" formControlName="password" />
 
-        <!-- <span *ngIf="showErrors && passwordLogin.errors?.required" class="error">
+                <!-- <span *ngIf="showErrors && passwordLogin.errors?.required" class="error">
             Missing field.
         </span> -->
+            </div>
+        </div>
     </div>
 
     <!-- Wrong username or password -->
@@ -31,6 +35,6 @@
     </button>
 
     <a href="#" (click)="switchForms()">
-        register
+        I don't have an account.
     </a>
 </form>
