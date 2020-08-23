@@ -1,0 +1,11 @@
+a {
+    color: blue;
+    text-decoration: underline;
+    font-size: 11px;
+    float: right;
+    margin-top: 2vh;
+}
+
+a:hover {
+    cursor: pointer;
+}

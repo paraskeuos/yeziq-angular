@@ -11,6 +11,10 @@ export class LoginPageComponent implements OnInit {
 
   constructor() { }
 
+  onFormSwitch(val: boolean): void {
+    this.showLogin = val;
+  }
+
   ngOnInit(): void {
   }
 

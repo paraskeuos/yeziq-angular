@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
@@ -7,6 +7,9 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login-form.component.css']
 })
 export class LoginFormComponent implements OnInit {
+
+  @Output('formSwitch')
+  public emitFormSwitch: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public loginForm: FormGroup;
 
@@ -19,6 +22,10 @@ export class LoginFormComponent implements OnInit {
 
   public submitLoginInfo() {
     
+  }
+
+  switchForms(): void {
+    this.emitFormSwitch.emit(false);
   }
 
   ngOnInit(): void {

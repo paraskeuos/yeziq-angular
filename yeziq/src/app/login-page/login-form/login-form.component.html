@@ -1,16 +1,19 @@
-
 <form [formGroup]="loginForm" (ngSubmit)="submitLoginInfo()">
     <div class="form-group">
-        <label for="username">Username:</label>
-        <input class="input-sm" type="text" id="username" class="form-control form-control-sm"
-            formControlName="username" />
+        <div class="form-row">
+            <div class="col-12">
+                <label class="col-form-label-sm" for="username">Username:</label>
+                <input class="form-control form-control-sm input-sm" type="text" id="username"
+                    formControlName="username" />
 
-        <!-- <span *ngIf="showErrors && usernameLogin.errors?.required" class="error">
+                <!-- <span *ngIf="showErrors && usernameLogin.errors?.required" class="error">
             Missing field.
         </span> -->
+            </div>
+        </div>
     </div>
     <div class="form-group">
-        <label for="password">Password:</label>
+        <label class="col-form-label-sm" for="password">Password:</label>
         <input type="password" id="password" class="form-control form-control-sm" formControlName="password" />
 
         <!-- <span *ngIf="showErrors && passwordLogin.errors?.required" class="error">
@@ -27,7 +30,7 @@
         Sign in
     </button>
 
-    <!-- <a (click)="">
+    <a href="#" (click)="switchForms()">
         register
-    </a> -->
+    </a>
 </form>

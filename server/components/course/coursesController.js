@@ -98,16 +98,16 @@ module.exports.addCourse = async (req, res, next) => {
         name: req.body.name,
         author: req.body.author,
         targetLang: req.body.targetLang,
-        size: Math.ceil(lessons.length / lessonBatchSize),
         creationTime: new Date(),
         unknownWords: parseInt(req.body.unknownWords),
         yeziqs: parseInt(req.body.yeziqs)
     });
 
+    const courseSize = Math.ceil(lessons.length / lessonBatchSize)
     try {
         const course = await courseObj.save();
         
-        for (let i = 0; i < course.size; i++) {
+        for (let i = 0; i < courseSize; i++) {
 
             const lessonsObj = new Lessons({
                 _id: new mongoose.Types.ObjectId(),
