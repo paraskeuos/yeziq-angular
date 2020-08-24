@@ -4,6 +4,7 @@ import { UserServiceService } from 'src/app/services/user-service.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from 'src/models/user.model';
+import { SupportedLanguages, LangNames } from '../../../assets/language-support';
 
 @Component({
   selector: 'app-register-form',
@@ -19,6 +20,9 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
 
   public showErrors = false;
   public serverMsg = '';
+
+  public languages = SupportedLanguages;
+  public langNames = LangNames;
 
   public activeSubs: Subscription[] = [];
 

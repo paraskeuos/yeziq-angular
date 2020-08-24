@@ -62,13 +62,7 @@
             <div class="col-12">
                 <label class="col-form-label-sm" for="targetLang">I want to learn:</label>
                 <select id="targetLang" class="form-control form-control-sm" formControlName="targetLang">
-                    <!-- <ng-container *ngFor="let lang of targetLanguages; let i = index">
-                <ng-container *ngIf="lang !== srcLang">
-                    <option [value]="lang">{{ langNames.get(srcLang).get(lang) }}</option>
-                </ng-container>
-            </ng-container> -->
-                    <option value="de">German</option>
-                    <option value="fr">French</option>
+                    <option *ngFor="let lang of languages" [value]="lang">{{ langNames.get(lang) }}</option>
                 </select>
             </div>
         </div>

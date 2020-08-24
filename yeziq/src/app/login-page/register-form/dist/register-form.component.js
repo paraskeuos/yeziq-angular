@@ -20,6 +20,7 @@ exports.__esModule = true;
 exports.RegisterFormComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
+var language_support_1 = require("../../../assets/language-support");
 var RegisterFormComponent = /** @class */ (function () {
     function RegisterFormComponent(formBuilder, userService, router) {
         this.formBuilder = formBuilder;
@@ -28,6 +29,8 @@ var RegisterFormComponent = /** @class */ (function () {
         this.emitFormSwitch = new core_1.EventEmitter();
         this.showErrors = false;
         this.serverMsg = '';
+        this.languages = language_support_1.SupportedLanguages;
+        this.langNames = language_support_1.LangNames;
         this.activeSubs = [];
         this.registerForm = this.formBuilder.group({
             username: ['', [forms_1.Validators.required, forms_1.Validators.minLength(4), forms_1.Validators.maxLength(25)]],
