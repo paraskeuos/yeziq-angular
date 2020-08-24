@@ -9,3 +9,8 @@ a {
 a:hover {
     cursor: pointer;
 }
+
+span.error {
+    font-size: 11px;
+    color: red;
+}

@@ -6,9 +6,9 @@
                 <input class="form-control form-control-sm input-sm" type="text" id="username"
                     formControlName="username" />
 
-                <!-- <span *ngIf="showErrors && usernameLogin.errors?.required" class="error">
+                <span *ngIf="showErrors && username.errors?.required" class="error">
             Missing field.
-        </span> -->
+        </span>
             </div>
         </div>
     </div>
@@ -18,17 +18,17 @@
                 <label class="col-form-label-sm" for="password">Password:</label>
                 <input type="password" id="password" class="form-control form-control-sm" formControlName="password" />
 
-                <!-- <span *ngIf="showErrors && passwordLogin.errors?.required" class="error">
+                <span *ngIf="showErrors && password.errors?.required" class="error">
             Missing field.
-        </span> -->
+        </span>
             </div>
         </div>
     </div>
 
     <!-- Wrong username or password -->
-    <!-- <div class="form-group">
-        <span *ngIf="serverMsg" class="error">serverMsg</span>
-    </div> -->
+    <div class="form-group">
+        <span *ngIf="serverMsg" class="error">{{ serverMsg }}</span>
+    </div>
 
     <button type="submit" class="btn btn-warning btn-sm btn-block">
         Sign in

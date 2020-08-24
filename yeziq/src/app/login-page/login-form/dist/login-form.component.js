@@ -10,20 +10,57 @@ exports.LoginFormComponent = void 0;
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var LoginFormComponent = /** @class */ (function () {
-    function LoginFormComponent(formBuilder) {
+    function LoginFormComponent(formBuilder, userService, router) {
         this.formBuilder = formBuilder;
+        this.userService = userService;
+        this.router = router;
         this.emitFormSwitch = new core_1.EventEmitter();
+        this.showErrors = false;
+        this.serverMsg = '';
+        this.activeSubs = [];
         this.loginForm = this.formBuilder.group({
             username: ['', [forms_1.Validators.required]],
             password: ['', [forms_1.Validators.required]]
         });
     }
     LoginFormComponent.prototype.submitLoginInfo = function () {
+        var _this = this;
+        this.serverMsg = '';
+        if (!this.loginForm.valid) {
+            this.showErrors = true;
+            return;
+        }
+        this.showErrors = false;
+        var sub = this.userService.login(this.loginForm.value).subscribe(function (user) {
+            if (user)
+                _this.router.navigate(['/courses']);
+            else {
+                _this.serverMsg = 'Incorrect username or password.';
+            }
+        });
+        this.activeSubs.push(sub);
     };
+    Object.defineProperty(LoginFormComponent.prototype, "username", {
+        get: function () {
+            return this.loginForm.get('username');
+        },
+        enumerable: false,
+        configurable: true
+    });
+    Object.defineProperty(LoginFormComponent.prototype, "password", {
+        get: function () {
+            return this.loginForm.get('password');
+        },
+        enumerable: false,
+        configurable: true
+    });
     LoginFormComponent.prototype.switchForms = function () {
         this.emitFormSwitch.emit(false);
     };
     LoginFormComponent.prototype.ngOnInit = function () {
+    };
+    LoginFormComponent.prototype.ngOnDestroy = function () {
+        this.activeSubs.forEach(function (sub) { return sub.unsubscribe(); });
     };
     __decorate([
         core_1.Output('formSwitch')
