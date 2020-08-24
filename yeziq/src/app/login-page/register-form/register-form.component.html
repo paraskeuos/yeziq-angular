@@ -5,12 +5,12 @@
                 <label class="col-form-label-sm" for="username">Username:</label>
                 <input type="text" id="username" class="form-control form-control-sm" formControlName="username" />
 
-                <!-- <span *ngIf="showErrors && username.errors?.required" class="error">
-            {{ langMap.get(srcLang).get('missingField') }}
-        </span>
-        <span *ngIf="showErrors && (username.errors?.minlength || username.errors?.maxlength)" class="error">
-            {{ langMap.get(srcLang).get('usernameLength') }}
-        </span> -->
+                <span *ngIf="showErrors && username.errors?.required" class="error">
+                    Missing field.
+                </span>
+                <span *ngIf="showErrors && (username.errors?.minlength || username.errors?.maxlength)" class="error">
+                    Must be between 4 and 25 characters long.
+                </span>
             </div>
         </div>
     </div>
@@ -20,12 +20,12 @@
                 <label class="col-form-label-sm" for="password">Password:</label>
                 <input type="password" id="password" class="form-control form-control-sm" formControlName="password" />
 
-                <!-- <span *ngIf="showErrors && password.errors?.required" class="error">
-            {{ langMap.get(srcLang).get('missingField') }}
-        </span>
-        <span *ngIf="showErrors && (password.errors?.minlength || password.errors?.maxlength)" class="error">
-            {{ langMap.get(srcLang).get('passwordLength') }}
-        </span> -->
+                <span *ngIf="showErrors && password.errors?.required" class="error">
+                    Missing field.
+                </span>
+                <span *ngIf="showErrors && (password.errors?.minlength || password.errors?.maxlength)" class="error">
+                    Must be between 6 and 25 characters long.
+                </span>
             </div>
         </div>
     </div>
@@ -36,9 +36,9 @@
                 <input type="password" id="confirmPassword" class="form-control form-control-sm"
                     formControlName="confirmPassword" />
 
-                <!-- <span *ngIf="showErrors && confirmPassword.errors?.unconfirmedPassword" class="error">
-            {{ langMap.get(srcLang).get('unconfirmedPassword') }}
-        </span> -->
+                <span *ngIf="showErrors && confirmPassword.errors?.unconfirmedPassword" class="error">
+                    Passwords must match.
+                </span>
             </div>
         </div>
     </div>
@@ -48,12 +48,12 @@
                 <label class="col-form-label-sm" for="email">Email:</label>
                 <input type="email" id="email" class="form-control form-control-sm" formControlName="email" />
 
-                <!-- <span *ngIf="showErrors && email.errors?.required" class="error">
-            {{ langMap.get(srcLang).get('missingField') }}
-        </span>
-        <span *ngIf="showErrors && email.errors?.email" class="error">
-            {{ langMap.get(srcLang).get('invalidEmail') }}
-        </span> -->
+                <span *ngIf="showErrors && email.errors?.required" class="error">
+                    Missing field.
+                </span>
+                <span *ngIf="showErrors && email.errors?.email" class="error">
+                    Invalid email format.
+                </span>
             </div>
         </div>
     </div>
@@ -74,10 +74,9 @@
         </div>
     </div>
 
-    <!-- Ako korisnik vec postoji -->
-    <!-- <div class="form-group">
+    <div class="form-group">
         <span *ngIf="serverMsg" class="error">{{ serverMsg }}</span>
-    </div> -->
+    </div>
 
     <button type="submit" class="btn btn-info btn-sm btn-block">
         Register
