@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/cor
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { User } from 'src/models/user.model';
-import { UserServiceService } from '../../services/user-service.service';
+import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -23,7 +23,7 @@ export class LoginFormComponent implements OnInit, OnDestroy {
   private activeSubs: Subscription[] = [];
 
   constructor(private formBuilder: FormBuilder,
-              private userService: UserServiceService,
+              private userService: UserService,
               private router: Router) { 
     this.loginForm = this.formBuilder.group({
       username: ['', [Validators.required]],

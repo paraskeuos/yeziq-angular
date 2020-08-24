@@ -7,7 +7,7 @@ import { Course } from 'src/models/course.model';
 @Injectable({
   providedIn: 'root'
 })
-export class UserServiceService {
+export class UserService {
 
   constructor(private http: HttpClient) { }
 

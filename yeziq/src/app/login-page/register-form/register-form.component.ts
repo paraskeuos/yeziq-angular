@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
-import { UserServiceService } from 'src/app/services/user-service.service';
+import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { User } from 'src/models/user.model';
@@ -27,7 +27,7 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
   public activeSubs: Subscription[] = [];
 
   constructor(private formBuilder: FormBuilder,
-              private userService: UserServiceService,
+              private userService: UserService,
               private router: Router) { 
 
     this.registerForm = this.formBuilder.group({
