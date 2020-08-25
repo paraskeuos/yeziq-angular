@@ -8,9 +8,9 @@
 
             <div class="row justify-content-center" style="background-color: white; padding: 3vh;">
                 <div class="col-10">
-                    <app-login-form *ngIf="showLogin" (formSwitch)="onFormSwitch($event)"></app-login-form>
-
-                    <app-register-form *ngIf="!showLogin" (formSwitch)="onFormSwitch($event)"></app-register-form>
+                    <app-login-form *ngIf="showLogin.getValue()" [showLogin]="showLogin"></app-login-form>
+                    
+                    <app-register-form *ngIf="!showLogin.getValue()" [showLogin]="showLogin"></app-register-form>
                 </div>
             </div>
         </div>

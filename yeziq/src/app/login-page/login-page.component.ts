@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-login-page',
@@ -7,13 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginPageComponent implements OnInit {
 
-  public showLogin = true;
+  public showLogin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
 
   constructor() { }
-
-  onFormSwitch(val: boolean): void {
-    this.showLogin = val;
-  }
 
   ngOnInit(): void {
   }

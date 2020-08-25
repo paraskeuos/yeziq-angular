@@ -26,7 +26,6 @@ var RegisterFormComponent = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.userService = userService;
         this.router = router;
-        this.emitFormSwitch = new core_1.EventEmitter();
         this.showErrors = false;
         this.serverMsg = '';
         this.languages = language_support_1.SupportedLanguages;
@@ -74,9 +73,6 @@ var RegisterFormComponent = /** @class */ (function () {
         this.registerForm.reset();
         this.registerForm.get('targetLang').setValue('de');
     };
-    RegisterFormComponent.prototype.switchForms = function () {
-        this.emitFormSwitch.emit(true);
-    };
     Object.defineProperty(RegisterFormComponent.prototype, "username", {
         get: function () {
             return this.registerForm.get('username');
@@ -111,8 +107,8 @@ var RegisterFormComponent = /** @class */ (function () {
         this.activeSubs.forEach(function (sub) { return sub.unsubscribe(); });
     };
     __decorate([
-        core_1.Output('formSwitch')
-    ], RegisterFormComponent.prototype, "emitFormSwitch");
+        core_1.Input()
+    ], RegisterFormComponent.prototype, "showLogin");
     RegisterFormComponent = __decorate([
         core_1.Component({
             selector: 'app-register-form',

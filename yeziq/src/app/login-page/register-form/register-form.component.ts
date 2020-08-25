@@ -1,8 +1,8 @@
-import { Component, OnInit, EventEmitter, Output, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn, ValidationErrors, AbstractControl } from '@angular/forms';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription, BehaviorSubject } from 'rxjs';
 import { User } from 'src/models/user.model';
 import { SupportedLanguages, LangNames } from '../../../assets/language-support';
 
@@ -13,8 +13,8 @@ import { SupportedLanguages, LangNames } from '../../../assets/language-support'
 })
 export class RegisterFormComponent implements OnInit, OnDestroy {
 
-  @Output('formSwitch')
-  public emitFormSwitch: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input()
+  public showLogin: BehaviorSubject<boolean>;
 
   public registerForm: FormGroup;
 
@@ -80,10 +80,6 @@ export class RegisterFormComponent implements OnInit, OnDestroy {
     this.activeSubs.push(registerSub);
     this.registerForm.reset();
     this.registerForm.get('targetLang').setValue('de');
-  }
-
-  switchForms(): void {
-    this.emitFormSwitch.emit(true);
   }
 
   get username() {

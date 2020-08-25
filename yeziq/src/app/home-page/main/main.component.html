@@ -1,9 +1,9 @@
 <div class="row justify-content-center" id="mainRow">
     <div class="col-12 col-md-8 col-lg-6" id="mainContent">
 
-        <app-courses *ngIf="showCourses" [courses]="courses"></app-courses>
+        <app-courses *ngIf="showCourses.getValue()" [courses]="courses"></app-courses>
 
-        <app-reading-space *ngIf="!showCourses"></app-reading-space>
+        <app-reading-space *ngIf="!showCourses.getValue()"></app-reading-space>
 
     </div>
 </div>

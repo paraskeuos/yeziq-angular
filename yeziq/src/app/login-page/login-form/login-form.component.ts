@@ -1,6 +1,6 @@
-import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Input } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { Subscription } from 'rxjs';
+import { Subscription, BehaviorSubject } from 'rxjs';
 import { User } from 'src/models/user.model';
 import { UserService } from '../../services/user.service';
 import { Router } from '@angular/router';
@@ -12,8 +12,8 @@ import { Router } from '@angular/router';
 })
 export class LoginFormComponent implements OnInit, OnDestroy {
 
-  @Output('formSwitch')
-  public emitFormSwitch: EventEmitter<boolean> = new EventEmitter<boolean>();
+  @Input()
+  public showLogin: BehaviorSubject<boolean>;
 
   public loginForm: FormGroup;
 
@@ -59,10 +59,6 @@ export class LoginFormComponent implements OnInit, OnDestroy {
 
   get password() {
     return this.loginForm.get('password');
-  }
-
-  switchForms(): void {
-    this.emitFormSwitch.emit(false);
   }
 
   ngOnInit(): void {

@@ -14,7 +14,6 @@ var LoginFormComponent = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.userService = userService;
         this.router = router;
-        this.emitFormSwitch = new core_1.EventEmitter();
         this.showErrors = false;
         this.serverMsg = '';
         this.activeSubs = [];
@@ -54,17 +53,14 @@ var LoginFormComponent = /** @class */ (function () {
         enumerable: false,
         configurable: true
     });
-    LoginFormComponent.prototype.switchForms = function () {
-        this.emitFormSwitch.emit(false);
-    };
     LoginFormComponent.prototype.ngOnInit = function () {
     };
     LoginFormComponent.prototype.ngOnDestroy = function () {
         this.activeSubs.forEach(function (sub) { return sub.unsubscribe(); });
     };
     __decorate([
-        core_1.Output('formSwitch')
-    ], LoginFormComponent.prototype, "emitFormSwitch");
+        core_1.Input()
+    ], LoginFormComponent.prototype, "showLogin");
     LoginFormComponent = __decorate([
         core_1.Component({
             selector: 'app-login-form',

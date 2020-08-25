@@ -6,22 +6,27 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.LoginPageComponent = void 0;
+exports.MainComponent = void 0;
 var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
-var LoginPageComponent = /** @class */ (function () {
-    function LoginPageComponent() {
-        this.showLogin = new rxjs_1.BehaviorSubject(true);
+var MainComponent = /** @class */ (function () {
+    function MainComponent() {
+        // Shows courses or reading page
+        //public showCourses = true;
+        this.showCourses = new rxjs_1.BehaviorSubject(true);
     }
-    LoginPageComponent.prototype.ngOnInit = function () {
+    MainComponent.prototype.ngOnInit = function () {
     };
-    LoginPageComponent = __decorate([
+    __decorate([
+        core_1.Input()
+    ], MainComponent.prototype, "courses");
+    MainComponent = __decorate([
         core_1.Component({
-            selector: 'app-login-page',
-            templateUrl: './login-page.component.html',
-            styleUrls: ['./login-page.component.css']
+            selector: 'app-main',
+            templateUrl: './main.component.html',
+            styleUrls: ['./main.component.css']
         })
-    ], LoginPageComponent);
-    return LoginPageComponent;
+    ], MainComponent);
+    return MainComponent;
 }());
-exports.LoginPageComponent = LoginPageComponent;
+exports.MainComponent = MainComponent;
