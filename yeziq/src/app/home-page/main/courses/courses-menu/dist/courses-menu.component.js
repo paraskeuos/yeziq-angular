@@ -6,26 +6,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.NavbarComponent = void 0;
+exports.CoursesMenuComponent = void 0;
 var core_1 = require("@angular/core");
-var NavbarComponent = /** @class */ (function () {
-    function NavbarComponent() {
+var CoursesMenuComponent = /** @class */ (function () {
+    function CoursesMenuComponent() {
     }
-    NavbarComponent.prototype.ngOnInit = function () {
+    CoursesMenuComponent.prototype.ngOnInit = function () {
     };
     __decorate([
         core_1.Input()
-    ], NavbarComponent.prototype, "user");
-    __decorate([
-        core_1.Input()
-    ], NavbarComponent.prototype, "knownWordCount");
-    NavbarComponent = __decorate([
+    ], CoursesMenuComponent.prototype, "courses");
+    CoursesMenuComponent = __decorate([
         core_1.Component({
-            selector: 'app-navbar',
-            templateUrl: './navbar.component.html',
-            styleUrls: ['./navbar.component.css']
+            selector: 'app-courses-menu',
+            templateUrl: './courses-menu.component.html',
+            styleUrls: ['./courses-menu.component.css']
         })
-    ], NavbarComponent);
-    return NavbarComponent;
+    ], CoursesMenuComponent);
+    return CoursesMenuComponent;
 }());
-exports.NavbarComponent = NavbarComponent;
+exports.CoursesMenuComponent = CoursesMenuComponent;

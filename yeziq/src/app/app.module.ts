@@ -15,6 +15,7 @@ import { AddCoursesComponent } from './home-page/main/courses/add-courses/add-co
 import { ReadingSpaceComponent } from './home-page/main/reading-space/reading-space.component';
 import { LoginFormComponent } from './login-page/login-form/login-form.component';
 import { RegisterFormComponent } from './login-page/register-form/register-form.component';
+import { LoadingAnimationComponent } from './home-page/loading-animation/loading-animation.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { RegisterFormComponent } from './login-page/register-form/register-form.
     AddCoursesComponent,
     ReadingSpaceComponent,
     LoginFormComponent,
-    RegisterFormComponent
+    RegisterFormComponent,
+    LoadingAnimationComponent
   ],
   imports: [
     BrowserModule,

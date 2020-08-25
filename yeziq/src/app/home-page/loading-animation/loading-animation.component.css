@@ -1,0 +1,21 @@
+div.loading {
+    height: 60px;
+    width: 60px;
+    margin: auto;
+    border: 3px solid rgb(225, 225, 225);
+    border-top: 3px solid rgb(53, 53, 163);
+    border-bottom: 3px solid rgb(53, 53, 163);
+    border-radius: 50%;
+    animation: spin 1.5s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+div.desc {
+    margin: 1vh auto 0 auto; 
+    text-align: center;
+    font-size: 11px;
+}
