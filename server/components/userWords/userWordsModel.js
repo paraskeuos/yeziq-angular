@@ -17,8 +17,8 @@ const userWordsSchema = mongoose.Schema({
             word: String,
             status: Number, // 0 - known, 1 - yeziq
             chosenTrans: String,
-            possibleTrans: [String],
-            userTrans: String
+            possibleTrans: [String]
+            /* userTrans: String */
         }],
         required: true
     }

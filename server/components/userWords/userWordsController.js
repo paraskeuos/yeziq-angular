@@ -49,7 +49,7 @@ module.exports.addYeziq = async (req, res, next) => {
     const word = req.body.word;
     const chosenTrans = req.body.chosenTrans;
     const possibleTrans = req.body.possibleTrans;
-    const userTrans = req.body.userTrans;
+    //const userTrans = req.body.userTrans;
 
     try {
         const userWords = await UserWords.findOne({ $and: [{user: userId}, {targetLang: lang}]}).exec();
@@ -59,14 +59,14 @@ module.exports.addYeziq = async (req, res, next) => {
             selected[0].status = 1;
             selected[0].chosenTrans = chosenTrans;
             selected[0].possibleTrans = possibleTrans;
-            selected[0].userTrans = userTrans;
+            //selected[0].userTrans = userTrans;
         } else
             userWords.words.push({
                 word: word,
                 status: 1,
                 chosenTrans: chosenTrans,
                 possibleTrans: possibleTrans,
-                userTrans: userTrans
+                //userTrans: userTrans
             });
 
         await userWords.save();
@@ -82,7 +82,7 @@ module.exports.wordIsKnown = async (req, res, next) => {
     const word = req.body.word;
     const chosenTrans = req.body.chosenTrans;
     const possibleTrans = req.body.possibleTrans;
-    const userTrans = req.body.userTrans;
+    //const userTrans = req.body.userTrans;
     
     try {
         const userWords = await UserWords.findOne({ $and: [{user: userId}, {targetLang: lang}]}).exec();
@@ -92,14 +92,14 @@ module.exports.wordIsKnown = async (req, res, next) => {
             selected[0].status = 0;
             selected[0].chosenTrans = chosenTrans;
             selected[0].possibleTrans = possibleTrans;
-            selected[0].userTrans = userTrans;
+            //selected[0].userTrans = userTrans;
         } else
             userWords.words.push({
                 word: word,
                 status: 0,
                 chosenTrans: chosenTrans,
                 possibleTrans: possibleTrans,
-                userTrans: userTrans
+                //userTrans: userTrans
             });
 
         await userWords.save();
@@ -124,14 +124,14 @@ module.exports.manyWordsAreKnown = async (req, res, next) => {
                 selected[0].status = 0;
                 selected[0].chosenTrans = newWord.chosenTrans;
                 selected[0].possibleTrans = newWord.possibleTrans;
-                selected[0].userTrans = newWord.userTrans;
+                //selected[0].userTrans = newWord.userTrans;
             } else
                 userWords.words.push({
                     word: newWord.word,
                     status: 0,
                     chosenTrans: newWord.chosenTrans,
                     possibleTrans: newWord.possibleTrans,
-                    userTrans: newWord.userTrans
+                    //userTrans: newWord.userTrans
                 });
         });
 
