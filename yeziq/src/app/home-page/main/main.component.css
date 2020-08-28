@@ -1,5 +1,8 @@
 #mainContent {
-    /* border: 1px solid rgb(54, 54, 180); */
+}
+
+#mainRow {
+    /* min-height: 80vh; */
 }
 
 /* @media screen and (max-height: 800px) {

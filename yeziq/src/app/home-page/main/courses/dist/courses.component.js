@@ -6,26 +6,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 exports.__esModule = true;
-exports.MainComponent = void 0;
+exports.CoursesComponent = void 0;
 var core_1 = require("@angular/core");
-var rxjs_1 = require("rxjs");
-var MainComponent = /** @class */ (function () {
-    function MainComponent() {
-        // Shows courses or reading page
-        this.showCourses = new rxjs_1.BehaviorSubject(true);
+var CoursesComponent = /** @class */ (function () {
+    function CoursesComponent() {
+        // Show courses menu or add course form
+        this.showMenu = true;
     }
-    MainComponent.prototype.ngOnInit = function () {
+    CoursesComponent.prototype.ngOnInit = function () {
     };
     __decorate([
         core_1.Input()
-    ], MainComponent.prototype, "courses");
-    MainComponent = __decorate([
+    ], CoursesComponent.prototype, "courses");
+    CoursesComponent = __decorate([
         core_1.Component({
-            selector: 'app-main',
-            templateUrl: './main.component.html',
-            styleUrls: ['./main.component.css']
+            selector: 'app-courses',
+            templateUrl: './courses.component.html',
+            styleUrls: ['./courses.component.css']
         })
-    ], MainComponent);
-    return MainComponent;
+    ], CoursesComponent);
+    return CoursesComponent;
 }());
-exports.MainComponent = MainComponent;
+exports.CoursesComponent = CoursesComponent;

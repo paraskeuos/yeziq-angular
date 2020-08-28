@@ -17,8 +17,9 @@ var HomePageComponent = /** @class */ (function () {
         this.router = router;
         this.knownWordCount = new rxjs_1.BehaviorSubject(-1);
         this.courses = new rxjs_1.BehaviorSubject(null);
+        // Tells if the loading animation should be displayed
+        this.loading = new rxjs_1.BehaviorSubject(true);
         this.loadingProgress = '';
-        //public loading = false;
         this.activeSubs = [];
         var getUser = this.userService.getUser();
         if (!getUser) {
@@ -55,6 +56,7 @@ var HomePageComponent = /** @class */ (function () {
         //this.loading = false;
         var sub = this.userService.getCoursesByAuthor({ author: this.user.username, targetLang: this.user.targetLang }).subscribe(function (courses) {
             _this.courses.next(courses);
+            _this.loading.next(false);
             /* this.showRemoveOpts = new Array(courses.length);
       
             // Informacije o poznatim ("belim") i yeziq ("zutim") recima iz baze

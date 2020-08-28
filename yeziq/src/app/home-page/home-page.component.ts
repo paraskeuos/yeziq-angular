@@ -18,8 +18,9 @@ export class HomePageComponent implements OnInit, OnDestroy {
 
   public courses: BehaviorSubject<Course[]> = new BehaviorSubject<Course[]>(null);
 
+  // Tells if the loading animation should be displayed
+  public loading = new BehaviorSubject<boolean>(true);
   public loadingProgress = '';
-  //public loading = false;
 
   private activeSubs: Subscription[] = [];
 
@@ -69,6 +70,7 @@ export class HomePageComponent implements OnInit, OnDestroy {
     const sub = this.userService.getCoursesByAuthor({ author: this.user.username, targetLang: this.user.targetLang }).subscribe((courses: Course[]) => {
 
       this.courses.next(courses);
+      this.loading.next(false);
       /* this.showRemoveOpts = new Array(courses.length);
 
       // Informacije o poznatim ("belim") i yeziq ("zutim") recima iz baze

@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <app-navbar [user]="user" [knownWordCount]="knownWordCount"></app-navbar>
 
-    <app-main *ngIf="courses.getValue()" [courses]="courses.getValue()"></app-main>
+    <app-main *ngIf="!loading.getValue()" [courses]="courses.getValue()"></app-main>
 
-    <app-loading-animation *ngIf="!courses.getValue()" [desc]="loadingProgress"></app-loading-animation>
+    <app-loading-animation *ngIf="loading.getValue()" [desc]="loadingProgress"></app-loading-animation>
 </div>
