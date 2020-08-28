@@ -138,8 +138,9 @@ module.exports.deleteCourse = async (req, res, next) => {
 
 module.exports.deleteCourses = async (req, res, next) => {
     try {
-        const obj = await Course.deleteMany({}).exec();
-        res.status(200).json({ message: `${obj} courses deleted. ` });
+        await Course.deleteMany({}).exec();
+        await Lessons.deleteMany({}).exec();
+        res.status(200).send();
     } catch (err) {
         next(err);
     }

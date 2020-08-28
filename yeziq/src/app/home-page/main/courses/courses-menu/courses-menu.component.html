@@ -1,1 +1,9 @@
-<p>{{ courses.length ? 1 : 'Nada' }}</p>
+<ng-container *ngIf="courses.length; else noCourses">
+    <div *ngFor="let courses of courses">
+        {{ course.name }}
+    </div>
+</ng-container>
+
+<ng-template #noCourses>You haven't created any courses yet.</ng-template>
+
+

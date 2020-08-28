@@ -18,8 +18,8 @@ var LoginFormComponent = /** @class */ (function () {
         this.serverMsg = '';
         this.activeSubs = [];
         this.loginForm = this.formBuilder.group({
-            username: ['', [forms_1.Validators.required]],
-            password: ['', [forms_1.Validators.required]]
+            username: ['milan', [forms_1.Validators.required]],
+            password: ['milan123', [forms_1.Validators.required]]
         });
     }
     LoginFormComponent.prototype.submitLoginInfo = function () {

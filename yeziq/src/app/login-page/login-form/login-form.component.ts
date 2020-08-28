@@ -26,8 +26,8 @@ export class LoginFormComponent implements OnInit, OnDestroy {
               private userService: UserService,
               private router: Router) { 
     this.loginForm = this.formBuilder.group({
-      username: ['', [Validators.required]],
-      password: ['', [Validators.required]]
+      username: ['milan', [Validators.required]],
+      password: ['milan123', [Validators.required]]
     });
   }
 

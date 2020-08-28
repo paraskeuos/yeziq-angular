@@ -1,0 +1,19 @@
+#fileToUpload {
+    float: right; 
+    font-style: italic; 
+    margin-top: 1vh; 
+    margin-bottom: 2vh; 
+    cursor: pointer; 
+    font-weight: bold;
+    background-color: rgb(231, 255, 231)
+}
+
+#fileToUpload:hover {
+    text-decoration-line: line-through;
+}
+
+#addCourseError {
+    float: right;
+    color: red;
+    font-size: 11px;
+}

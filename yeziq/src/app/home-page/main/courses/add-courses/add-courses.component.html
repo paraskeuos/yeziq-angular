@@ -1,1 +1,27 @@
-<p>add-courses works!</p>
+<form [formGroup]="courseForm" autocomplete="off" (ngSubmit)="submitCourse()">
+    <span id="addCourseError">{{ addCourseError }}</span>
+    <div class="form-group">
+        <label for="name">Name of the course:</label>
+        <input type="text" id="text" class="form-control form-control-sm" formControlName="name" />
+    </div>
+
+    <!-- File upload -->
+    <div>
+        <label style="float: right; margin-left: 2vh;">
+            <span
+                class="btn btn-secondary btn-sm">Browse files</span>
+            <input type="file" name="file" style="display: none" formControlName="file" accept=".txt,.pdf,.epub" #fileInput>
+        </label>
+        <label id="fileToUpload" (click)="courseForm.get('file').setValue('')">
+            {{ getChosenFile() }}
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="text" style="margin-top: 4vh">You can import a file or enter text below:</label>
+        <textarea id="text" class="form-control form-control-sm" rows="20"
+            formControlName="text"></textarea>
+    </div>
+    <button class="btn btn-warning"
+        type="submit">Create course</button>
+</form>
