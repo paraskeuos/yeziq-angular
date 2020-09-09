@@ -16,6 +16,10 @@ import { ReadingSpaceComponent } from './home-page/main/reading-space/reading-sp
 import { LoginFormComponent } from './login-page/login-form/login-form.component';
 import { RegisterFormComponent } from './login-page/register-form/register-form.component';
 import { LoadingAnimationComponent } from './home-page/loading-animation/loading-animation.component';
+import { SideComponent } from './home-page/main/reading-space/side/side.component';
+import { LessonPageComponent } from './home-page/main/reading-space/lesson-page/lesson-page.component';
+import { ProgressBarComponent } from './home-page/main/reading-space/progress-bar/progress-bar.component';
+import { CourseInfoComponent } from './home-page/main/reading-space/course-info/course-info.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { LoadingAnimationComponent } from './home-page/loading-animation/loading
     ReadingSpaceComponent,
     LoginFormComponent,
     RegisterFormComponent,
-    LoadingAnimationComponent
+    LoadingAnimationComponent,
+    SideComponent,
+    LessonPageComponent,
+    ProgressBarComponent,
+    CourseInfoComponent
   ],
   imports: [
     BrowserModule,

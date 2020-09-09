@@ -3,10 +3,10 @@
 
         <!-- <app-loading-animation ></app-loading-animation> -->
         
-        <app-courses *ngIf="showCourses.getValue()" [courses]="courses" 
+        <app-courses *ngIf="selectedLesson.getValue() === -1" [courses]="courses" 
             [selectedCourse]="selectedCourse" [selectedLesson]="selectedLesson"></app-courses>
 
-        <app-reading-space *ngIf="selectedCourse.getValue() >= 0 && selectedLesson.getValue() >= 0"></app-reading-space>
+        <app-reading-space *ngIf="selectedLesson.getValue() >= 0"></app-reading-space>
 
     </div>
 </div>

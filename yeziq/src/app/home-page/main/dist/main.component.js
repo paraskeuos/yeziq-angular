@@ -11,8 +11,6 @@ var core_1 = require("@angular/core");
 var rxjs_1 = require("rxjs");
 var MainComponent = /** @class */ (function () {
     function MainComponent() {
-        // Shows courses or reading page
-        this.showCourses = new rxjs_1.BehaviorSubject(true);
         this.selectedCourse = new rxjs_1.BehaviorSubject(-1);
         this.selectedLesson = new rxjs_1.BehaviorSubject(-1);
     }

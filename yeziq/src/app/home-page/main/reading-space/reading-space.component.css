@@ -1,0 +1,11 @@
+#readingSpace {
+    border: 1px solid red;
+    height: 90vh;
+}
+
+
+@media screen and (max-height: 800px) {
+    #readingSpace {
+        height: 95vh;
+    }
+}

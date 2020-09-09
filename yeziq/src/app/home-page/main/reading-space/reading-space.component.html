@@ -1,1 +1,36 @@
-<p>reading-space works!</p>
+<div class="row" id="readingSpace">
+
+    <div class="col-12 col-lg-9" style="border: 1px solid blue; height: 100%;">
+        <app-course-info></app-course-info>
+
+        <app-progress-bar></app-progress-bar>
+
+        <app-lesson-page></app-lesson-page>
+    </div>
+    <div class="col-6 col-lg-3" style="border: 1px solid green; height: 100%">
+        <app-side></app-side>
+    </div>
+    <!-- Srednji deo za citanje -->
+    <!-- <div id="main" class="col-12 col-lg-6 offset-lg-2" *ngIf="course">
+      <app-main (selectedWord)="onSelectedWord($event)" [currWords]="currWords" [yeziqDB]="yeziqDB" [knownDB]="knownDB"
+        [user]="user" [course]="course" [currPage]="currPage" [currPageInd]="currPageInd" [currLessonInd]="currLessonInd" [knownWordCount]="knownWordCount" [level]="level">
+      </app-main>
+    </div> -->
+  
+    <!-- Loading animacija dok se ucitava stranica -->
+    <!-- <div class="col-12 col-lg-6 offset-lg-2">
+      <app-loading-circle [desc]="langMap.get(user.srcLang).get('loadingPageDesc')"></app-loading-circle>
+    </div> -->
+  
+    <!-- Desni deo za prikaz prevoda -->
+    <!-- <div id="side" class="col-6 col-lg-2">
+      <img id="sideToggle" onclick="document.getElementById('side').style.display = 'none'" src="../../assets/black-cross.png"/>
+  
+      <app-side *ngIf="selectedWord; else noSelection" [currWords]="currWords" [yeziqDB]="yeziqDB" [knownDB]="knownDB" [user]="user" [knownWordCount]="knownWordCount" [level]="level"
+        [selectedWord]="selectedWord" [langMap]="langMap" [hidden]="sideHidden" [dictionaries]="dictionaries"></app-side>
+    </div> -->
+  
+    <!-- <ng-template #noSelection>
+      <p id="sidebarDesc">{{ langMap.get(user.srcLang).get('sidebarDesc') }}</p>
+    </ng-template> -->
+  </div>

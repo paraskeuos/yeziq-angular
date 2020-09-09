@@ -4,10 +4,12 @@
         <h3 *ngIf="selectedCourse.getValue() >= 0" class="text-primary">{{ courses[selectedCourse.getValue()].name }}</h3>
     </div>
     <div class="col-3 offset-5">
-        <button *ngIf="selectedCourse.getValue() === -1" class="btn btn-outline-primary" id="switchView" (click)="showAddCourse()">
+        <button *ngIf="selectedCourse.getValue() === -1" class="btn btn-outline-primary" id="switchView" 
+            (click)="showAddCourse()">
             Add Course
         </button>
-        <button *ngIf="selectedCourse.getValue() >= 0" class="btn btn-outline-primary" id="switchView" (click)="selectedCourse.next(-1)">
+        <button *ngIf="selectedCourse.getValue() >= 0" class="btn btn-outline-primary" id="switchView" 
+                (click)="selectedCourse.next(-1)">
             Back to Courses
         </button>
     </div>
@@ -16,7 +18,8 @@
 <hr />
 
 <ng-container *ngIf="courses.length && selectedCourse.getValue() === -1">
-    <div *ngFor="let course of courses; let i = index" class="alert alert-primary" (click)="selectedCourse.next(i)">
+    <div *ngFor="let course of courses; let i = index" class="alert alert-primary" 
+        (click)="selectedCourse.next(i)">
         {{ course.name }}
     </div>
 </ng-container>
@@ -24,7 +27,8 @@
 <ng-template *ngIf="!courses.length && selectedCourse.getValue() === -1" #noCourses>You haven't created any courses yet.</ng-template>
 
 <ng-container *ngIf="selectedCourse.getValue() >= 0">
-    <div *ngFor="let lesson of courses[selectedCourse.getValue()].lessons; let i = index" class="alert alert-primary">
+    <div *ngFor="let lesson of courses[selectedCourse.getValue()].lessons; let i = index" class="alert alert-primary"
+        (click)="selectedLesson.next(i)">
         Lesson {{ i+1 }}
     </div>
 </ng-container>

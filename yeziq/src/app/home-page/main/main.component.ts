@@ -9,9 +9,6 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class MainComponent implements OnInit {
 
-  // Shows courses or reading page
-  public showCourses: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(true);
-
   @Input()
   public courses: Course[];
 
