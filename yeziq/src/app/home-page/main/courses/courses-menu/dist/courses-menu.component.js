@@ -10,12 +10,25 @@ exports.CoursesMenuComponent = void 0;
 var core_1 = require("@angular/core");
 var CoursesMenuComponent = /** @class */ (function () {
     function CoursesMenuComponent() {
+        this.emitSwitchView = new core_1.EventEmitter();
     }
+    CoursesMenuComponent.prototype.showAddCourse = function () {
+        this.emitSwitchView.emit(false);
+    };
     CoursesMenuComponent.prototype.ngOnInit = function () {
     };
     __decorate([
         core_1.Input()
     ], CoursesMenuComponent.prototype, "courses");
+    __decorate([
+        core_1.Output('switchView')
+    ], CoursesMenuComponent.prototype, "emitSwitchView");
+    __decorate([
+        core_1.Input()
+    ], CoursesMenuComponent.prototype, "selectedCourse");
+    __decorate([
+        core_1.Input()
+    ], CoursesMenuComponent.prototype, "selectedLesson");
     CoursesMenuComponent = __decorate([
         core_1.Component({
             selector: 'app-courses-menu',

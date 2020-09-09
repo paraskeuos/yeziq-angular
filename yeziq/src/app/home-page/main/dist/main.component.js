@@ -13,6 +13,8 @@ var MainComponent = /** @class */ (function () {
     function MainComponent() {
         // Shows courses or reading page
         this.showCourses = new rxjs_1.BehaviorSubject(true);
+        this.selectedCourse = new rxjs_1.BehaviorSubject(-1);
+        this.selectedLesson = new rxjs_1.BehaviorSubject(-1);
     }
     MainComponent.prototype.ngOnInit = function () {
     };

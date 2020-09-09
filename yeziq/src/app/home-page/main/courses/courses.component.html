@@ -1,4 +1,4 @@
-<div class="row" id="header">
+<!-- <div class="row" id="header">
     <div class="col-4">
         <h3 class="text-primary">{{ showMenu ? 'Courses' : 'Add Course' }}</h3>
     </div>
@@ -9,8 +9,10 @@
     </div>
 </div>
 
-<hr>
+<hr> -->
 
-<app-courses-menu *ngIf="showMenu" [courses]="courses"></app-courses-menu>
+<app-courses-menu *ngIf="showMenu" [courses]="courses"
+    [selectedCourse]="selectedCourse" [selectedLesson]="selectedLesson"
+    (switchView)="onSwitchView($event)"></app-courses-menu>
 
-<app-add-courses *ngIf="!showMenu"></app-add-courses>
+<app-add-courses *ngIf="!showMenu" (switchView)="onSwitchView($event)"></app-add-courses>

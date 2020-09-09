@@ -1,3 +1,16 @@
+<div class="row" id="header">
+    <div class="col-4">
+        <h3 class="text-primary">Courses</h3>
+    </div>
+    <div class="col-3 offset-5">
+        <button class="btn btn-outline-primary" id="switchView" (click)="showAddCourse()">
+            Add Course
+        </button>
+    </div>
+</div>
+
+<hr />
+
 <ng-container *ngIf="courses.length; else noCourses">
     <div *ngFor="let course of courses" class="alert alert-primary">
         {{ course.name }}

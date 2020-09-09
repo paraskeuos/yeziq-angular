@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ElementRef, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, ViewChild, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, ValidatorFn } from '@angular/forms';
 import { User } from '../../../../../models/user.model';
 import { RegexMap } from 'src/assets/language-support';
@@ -22,6 +22,9 @@ export class AddCoursesComponent implements OnInit, OnDestroy {
 
   // TODO: refactor and comment
   public addCourseError: string = null;
+
+  @Output('switchView')
+  public emitSwitchView: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   @ViewChild('fileInput', { static: false })
   public fileInput: ElementRef;
@@ -73,6 +76,10 @@ export class AddCoursesComponent implements OnInit, OnDestroy {
       const contentEntered = (this.courseForm.get('file').value !== '') || (this.courseForm.get('text').value !== '');
       return contentEntered ? null : { noContent: true };
     }
+  }
+
+  public showCourses(): void {
+    this.emitSwitchView.emit(true);
   }
 
   // Course creation and saving based on form data

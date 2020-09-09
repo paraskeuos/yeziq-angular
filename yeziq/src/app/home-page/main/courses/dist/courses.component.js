@@ -13,11 +13,20 @@ var CoursesComponent = /** @class */ (function () {
         // Show courses menu or add course form
         this.showMenu = true;
     }
+    CoursesComponent.prototype.onSwitchView = function (showMenu) {
+        this.showMenu = showMenu;
+    };
     CoursesComponent.prototype.ngOnInit = function () {
     };
     __decorate([
         core_1.Input()
     ], CoursesComponent.prototype, "courses");
+    __decorate([
+        core_1.Input()
+    ], CoursesComponent.prototype, "selectedCourse");
+    __decorate([
+        core_1.Input()
+    ], CoursesComponent.prototype, "selectedLesson");
     CoursesComponent = __decorate([
         core_1.Component({
             selector: 'app-courses',

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Course } from 'src/models/course.model';
+import { BehaviorSubject } from 'rxjs';
 
 @Component({
   selector: 'app-courses',
@@ -14,7 +15,16 @@ export class CoursesComponent implements OnInit {
   @Input()
   public courses: Course[];
 
+  @Input()
+  public selectedCourse: BehaviorSubject<number>;
+  @Input()
+  public selectedLesson: BehaviorSubject<number>;
+
   constructor() { }
+
+  public onSwitchView(showMenu: boolean): void {
+    this.showMenu = showMenu;
+  }
 
   ngOnInit(): void {
   }

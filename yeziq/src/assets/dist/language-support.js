@@ -49,6 +49,9 @@ DictSupportedLangMap.set('Google Translate', ['en', 'de', 'fr', 'sr', 'es', 'it'
 DictSupportedLangMap.set('WordReference', ['en', 'de', 'fr', 'es', 'it', 'pt', 'ru']);
 DictSupportedLangMap.set('Yandex', ['en', 'de', 'fr', 'sr', 'es', 'it', 'pt', 'el', 'ru']);
 DictSupportedLangMap.set('Bing', ['en', 'de', 'fr', 'es', 'it', 'pt', 'el', 'ru']);
+// Dictionaries that work better when a whole expression is passed to them instead of a single word,
+// as opposed to dictionaries who take just on word as input
+var ExpressionDictionaries = ['Google Translate', 'Yandex', 'Bing'];
 // Names of online dictionaries and their query structure. Substrings <srcLang>, <targetLang>, <word> have to be changed in runtime with appropriate values.
 var DictionaryQueriesMap = new Map();
 exports.DictionaryQueriesMap = DictionaryQueriesMap;

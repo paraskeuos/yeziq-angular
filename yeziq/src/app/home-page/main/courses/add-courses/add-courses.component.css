@@ -17,3 +17,11 @@
     color: red;
     font-size: 11px;
 }
+
+#header {
+    padding-top: 2vh;
+}
+
+#switchView {
+    float: right;
+}

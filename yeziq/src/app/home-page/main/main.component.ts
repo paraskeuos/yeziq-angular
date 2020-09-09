@@ -15,6 +15,9 @@ export class MainComponent implements OnInit {
   @Input()
   public courses: Course[];
 
+  public selectedCourse: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+  public selectedLesson: BehaviorSubject<number> = new BehaviorSubject<number>(-1);
+
   constructor() { }
 
   ngOnInit(): void {

@@ -18,6 +18,7 @@ var AddCoursesComponent = /** @class */ (function () {
         this.router = router;
         // TODO: refactor and comment
         this.addCourseError = null;
+        this.emitSwitchView = new core_1.EventEmitter();
         this.regexMap = language_support_1.RegexMap;
         this.activeSubs = [];
         // Ako je izvrsen login, getUser nece biti null.
@@ -55,6 +56,9 @@ var AddCoursesComponent = /** @class */ (function () {
             var contentEntered = (_this.courseForm.get('file').value !== '') || (_this.courseForm.get('text').value !== '');
             return contentEntered ? null : { noContent: true };
         };
+    };
+    AddCoursesComponent.prototype.showCourses = function () {
+        this.emitSwitchView.emit(true);
     };
     // Course creation and saving based on form data
     AddCoursesComponent.prototype.submitCourse = function () {
@@ -268,6 +272,9 @@ var AddCoursesComponent = /** @class */ (function () {
     __decorate([
         core_1.Input()
     ], AddCoursesComponent.prototype, "user");
+    __decorate([
+        core_1.Output('switchView')
+    ], AddCoursesComponent.prototype, "emitSwitchView");
     __decorate([
         core_1.ViewChild('fileInput', { static: false })
     ], AddCoursesComponent.prototype, "fileInput");
